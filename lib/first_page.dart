@@ -26,55 +26,52 @@ class _TravelAppMainPageState extends State<TravelAppMainPage> {
     return Scaffold(
       backgroundColor: Color(0xFFFBFCFE),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 4,
-              child: SizedBox(),
-            ),
-            Expanded(
-              flex: 6,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: responsiveWidth(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: responsiveHeight(18.67),
-                      width: responsiveWidth(21.33),
-                      child: ImagePicker(
-                        imageName: 'Group',
-                      ),
-                    ),
-                    Container(
-                      height: responsiveHeight(52),
-                      width: responsiveHeight(52),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                          responsiveWidth(10),
-                        ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: responsiveWidth(20),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ExSizedBox(flex: 4),
+              Expanded(
+                flex: 6,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: responsiveWidth(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: responsiveHeight(18.67),
+                        width: responsiveWidth(21.33),
                         child: ImagePicker(
-                          imageName: 'person',
+                          imageName: 'Group',
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        height: responsiveHeight(52),
+                        width: responsiveHeight(52),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                            responsiveWidth(10),
+                          ),
+                          child: ImagePicker(
+                            imageName: 'person',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(),
-            ),
-            Expanded(
-              flex: 5,
-              child: Container(
-                margin: EdgeInsets.only(
-                  left: responsiveWidth(20),
-                ),
+              Expanded(
+                flex: 2,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 5,
                 child: Text(
                   'Discover',
                   style: TextStyle(
@@ -84,172 +81,226 @@ class _TravelAppMainPageState extends State<TravelAppMainPage> {
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: responsiveWidth(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    OptionText(
-                      responsiveWidth: responsiveWidth,
-                      optionText: "All",
-                      colour: Color(0xFFF35D38),
-                    ),
-                    OptionText(
-                      responsiveWidth: responsiveWidth,
-                      optionText: "Destination",
-                      colour: Color(0xFFCFCFD1),
-                    ),
-                    OptionText(
-                      responsiveWidth: responsiveWidth,
-                      optionText: "Cities",
-                      colour: Color(0xFFCFCFD1),
-                    ),
-                    OptionText(
-                      responsiveWidth: responsiveWidth,
-                      optionText: 'Experiences',
-                      colour: Color(0xFFCFCFD1),
-                    ),
-                  ],
+              Expanded(
+                flex: 2,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    right: responsiveWidth(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      OptionText(
+                        responsiveWidth: responsiveWidth,
+                        optionText: "All",
+                        colour: Color(0xFFF35D38),
+                      ),
+                      OptionText(
+                        responsiveWidth: responsiveWidth,
+                        optionText: "Destination",
+                        colour: Color(0xFFCFCFD1),
+                      ),
+                      OptionText(
+                        responsiveWidth: responsiveWidth,
+                        optionText: "Cities",
+                        colour: Color(0xFFCFCFD1),
+                      ),
+                      OptionText(
+                        responsiveWidth: responsiveWidth,
+                        optionText: 'Experiences',
+                        colour: Color(0xFFCFCFD1),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(),
-            ),
-            Expanded(
-              flex: 31,
-              child: Container(
-                margin: EdgeInsets.only(
-                  left: responsiveWidth(20),
-                ),
+              Expanded(
+                flex: 2,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 31,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: responsiveHeight(250),
-                          width: responsiveWidth(170),
-                          color: Colors.blue,
-                        ),
-                        PictureCard(
-                          responsiveWidth: responsiveWidth,
-                          responsiveHeight: responsiveHeight,
-                          imageName: 'kayak-big',
-                        ),
-                        Column(
-                          children: [
-                            ExSizedBox(
-                              flex: 67,
-                            ),
-                            Expanded(
-                              flex: 18,
-                              child: Column(
-                                children: [
-                                  TextOnPicture(
-                                    responsiveWidth: responsiveWidth,
-                                    text: 'Kayaking in the',
-                                  ),
-                                  TextOnPicture(
-                                    responsiveWidth: responsiveWidth,
-                                    text: 'Torimo Sea',
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: SizedBox(),
-                            ),
-                            Expanded(
-                              flex: 6,
-                              child: Row(
-                                children: [
-                                  Icon(Icons.location_on),
-                                  Text('Canada'),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              flex: 7,
-                              child: SizedBox(),
-                            ),
-                          ],
-                        ),
-                      ],
+                    PictureWithText(
+                      imageName: "kayak-big",
+                      responsiveWidth: responsiveWidth,
+                      responsiveHeight: responsiveHeight,
+                      locationText: 'Canada',
+                      verbText1: 'Kayaking in the',
+                      verbText2: 'Tofino Sea',
                     ),
                     SizedBox(
                       width: responsiveWidth(20),
                     ),
-                    PictureCard(
-                      imageName: 'canyon',
-                      responsiveHeight: responsiveHeight,
+                    PictureWithText(
+                      imageName: "canyon",
                       responsiveWidth: responsiveWidth,
+                      responsiveHeight: responsiveHeight,
+                      locationText: 'USA',
+                      verbText1: 'Hiking the Grand',
+                      verbText2: 'Canyon',
                     ),
                   ],
                 ),
               ),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(color: Colors.red),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(color: Colors.black),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(color: Colors.cyan),
-            ),
-            Expanded(
-              flex: 7,
-              child: Container(color: Colors.amber),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(color: Colors.brown),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(color: Colors.black),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(color: Colors.blue),
-            ),
-            Expanded(
-              flex: 12,
-              child: Container(color: Colors.orange),
-            ),
-            Expanded(
-              flex: 6,
-              child: Container(color: Colors.pink),
-            ),
-          ],
+              ExSizedBox(
+                flex: 4,
+              ),
+              Expanded(
+                flex: 4,
+                child: Text(
+                  'Activities',
+                  style: TextStyle(
+                    fontSize: responsiveWidth(24),
+                    fontWeight: fontWeight700,
+                    color: Color(0xFF0C0D0E),
+                  ),
+                ),
+              ),
+              ExSizedBox(flex: 3,),
+              Expanded(
+                flex: 7,
+                child: Container(color: Colors.amber),
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(color: Colors.brown),
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(color: Colors.black),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(color: Colors.blue),
+              ),
+              Expanded(
+                flex: 12,
+                child: Container(color: Colors.orange),
+              ),
+              Expanded(
+                flex: 6,
+                child: Container(color: Colors.pink),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class TextOnPicture extends StatelessWidget {
-  TextOnPicture({
+class PictureWithText extends StatelessWidget {
+  const PictureWithText({
     @required this.responsiveWidth,
-    @required this.text,
+    @required this.responsiveHeight,
+    @required this.imageName,
+    @required this.verbText1,
+    @required this.verbText2,
+    @required this.locationText,
   });
-  final String text;
   final double Function(double) responsiveWidth;
+  final double Function(double) responsiveHeight;
+  final String imageName;
+  final String verbText1;
+  final String verbText2;
+  final String locationText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        PictureCard(
+          responsiveWidth: responsiveWidth,
+          responsiveHeight: responsiveHeight,
+          imageName: imageName,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ExSizedBox(
+              flex: 67,
+            ),
+            Expanded(
+              flex: 18,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: responsiveWidth(10),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextOnImage(
+                      text: verbText1,
+                      responsiveWidth: responsiveWidth,
+                    ),
+                    TextOnImage(
+                      text: verbText2,
+                      responsiveWidth: responsiveWidth,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            ExSizedBox(
+              flex: 3,
+            ),
+            Expanded(
+              flex: 6,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: responsiveWidth(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: responsiveWidth(10.5),
+                      height: responsiveHeight(15),
+                      child: ImagePicker(
+                        imageName: 'Vector-5',
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: responsiveWidth(8.75),
+                      ),
+                      child: Text(
+                        locationText,
+                        style: TextStyle(
+                          fontWeight: fontWeight700,
+                          fontSize: responsiveWidth(10),
+                          color: Color(0xFFFBFCFE),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            ExSizedBox(
+              flex: 7,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class TextOnImage extends StatelessWidget {
+  const TextOnImage({
+    @required this.text,
+    @required this.responsiveWidth,
+  });
+  final double Function(double) responsiveWidth;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Text(
