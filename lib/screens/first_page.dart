@@ -25,254 +25,263 @@ class _TravelAppMainPageState extends State<TravelAppMainPage> {
     return Scaffold(
       backgroundColor: Color(0xFFFBFCFE),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: responsiveWidth(20),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ExSizedBox(flex: 4),
-              Expanded(
-                flex: 6,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: responsiveHeight(18.67),
-                      width: responsiveWidth(21.33),
-                      child: ImagePicker(
-                        imageName: 'Group',
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints:
+                BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: responsiveWidth(20),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ExSizedBox(flex: 4),
+                  Expanded(
+                    flex: 6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: responsiveHeight(18.67),
+                          width: responsiveWidth(21.33),
+                          child: ImagePicker(
+                            imageName: 'Group',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                            right: responsiveWidth(20),
+                          ),
+                          height: responsiveHeight(52),
+                          width: responsiveHeight(52),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              responsiveWidth(10),
+                            ),
+                            child: ImagePicker(
+                              imageName: 'person',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ExSizedBox(
+                    flex: 2,
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: Text(
+                      'Discover',
+                      style: TextStyle(
+                        fontWeight: fontWeight700,
+                        fontSize: responsiveWidth(32),
+                        color: Color(0xFF0C0D0E),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(
                         right: responsiveWidth(20),
                       ),
-                      height: responsiveHeight(52),
-                      width: responsiveHeight(52),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                          responsiveWidth(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OptionText(
+                            responsiveWidth: responsiveWidth,
+                            optionText: "All",
+                            colour: Color(0xFFF35D38),
+                          ),
+                          OptionText(
+                            responsiveWidth: responsiveWidth,
+                            optionText: "Destination",
+                            colour: Color(0xFFCFCFD1),
+                          ),
+                          OptionText(
+                            responsiveWidth: responsiveWidth,
+                            optionText: "Cities",
+                            colour: Color(0xFFCFCFD1),
+                          ),
+                          OptionText(
+                            responsiveWidth: responsiveWidth,
+                            optionText: 'Experiences',
+                            colour: Color(0xFFCFCFD1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(),
+                  ),
+                  Expanded(
+                    flex: 30,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        PictureWithText(
+                          imageName: "kayak-big",
+                          responsiveWidth: responsiveWidth,
+                          responsiveHeight: responsiveHeight,
+                          locationText: 'Canada',
+                          verbText1: 'Kayaking in the',
+                          verbText2: 'Tofino Sea',
                         ),
-                        child: ImagePicker(
-                          imageName: 'person',
+                        SizedBox(
+                          width: responsiveWidth(20),
                         ),
-                      ),
+                        PictureWithText(
+                          imageName: "canyon",
+                          responsiveWidth: responsiveWidth,
+                          responsiveHeight: responsiveHeight,
+                          locationText: 'USA',
+                          verbText1: 'Hiking the Grand',
+                          verbText2: 'Canyon',
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              ExSizedBox(
-                flex: 2,
-              ),
-              Expanded(
-                flex: 5,
-                child: Text(
-                  'Discover',
-                  style: TextStyle(
-                    fontWeight: fontWeight700,
-                    fontSize: responsiveWidth(32),
-                    color: Color(0xFF0C0D0E),
                   ),
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(),
-              ),
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    right: responsiveWidth(20),
+                  ExSizedBox(
+                    flex: 4,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      OptionText(
-                        responsiveWidth: responsiveWidth,
-                        optionText: "All",
-                        colour: Color(0xFFF35D38),
-                      ),
-                      OptionText(
-                        responsiveWidth: responsiveWidth,
-                        optionText: "Destination",
-                        colour: Color(0xFFCFCFD1),
-                      ),
-                      OptionText(
-                        responsiveWidth: responsiveWidth,
-                        optionText: "Cities",
-                        colour: Color(0xFFCFCFD1),
-                      ),
-                      OptionText(
-                        responsiveWidth: responsiveWidth,
-                        optionText: 'Experiences',
-                        colour: Color(0xFFCFCFD1),
-                      ),
-                    ],
+                  Expanded(
+                    flex: 3,
+                    child: TitleText(
+                      responsiveWidth: responsiveWidth,
+                      title: 'Activities',
+                    ),
                   ),
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(),
-              ),
-              Expanded(
-                flex: 31,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    PictureWithText(
-                      imageName: "kayak-big",
-                      responsiveWidth: responsiveWidth,
-                      responsiveHeight: responsiveHeight,
-                      locationText: 'Canada',
-                      verbText1: 'Kayaking in the',
-                      verbText2: 'Tofino Sea',
-                    ),
-                    SizedBox(
-                      width: responsiveWidth(20),
-                    ),
-                    PictureWithText(
-                      imageName: "canyon",
-                      responsiveWidth: responsiveWidth,
-                      responsiveHeight: responsiveHeight,
-                      locationText: 'USA',
-                      verbText1: 'Hiking the Grand',
-                      verbText2: 'Canyon',
-                    ),
-                  ],
-                ),
-              ),
-              ExSizedBox(
-                flex: 4,
-              ),
-              Expanded(
-                flex: 4,
-                child: TitleText(
-                  responsiveWidth: responsiveWidth,
-                  title: 'Activities',
-                ),
-              ),
-              ExSizedBox(
-                flex: 3,
-              ),
-              Expanded(
-                flex: 7,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'uil_kayak',
-                      height: responsiveHeight(36),
-                      width: responsiveHeight(36),
-                      label: 'KAYAK',
-                    ),
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'fa-solid_mountain',
-                      height: responsiveHeight(36),
-                      width: responsiveWidth(28.8),
-                      label: 'HIKE',
-                    ),
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'mdi_ski-water',
-                      height: responsiveHeight(36),
-                      width: responsiveHeight(36),
-                      label: 'WATER SKI',
-                    ),
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'fa-solid_spa',
-                      height: responsiveHeight(36),
-                      width: responsiveWidth(36),
-                      label: 'SPA',
-                    ),
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'ic_baseline-sports-tennis',
-                      height: responsiveHeight(36),
-                      width: responsiveHeight(36),
-                      label: 'TENNIS',
-                    ),
-                    ActivityItems(
-                      responsiveWidth: responsiveWidth,
-                      imageName: 'bi_bicycle',
-                      height: responsiveHeight(36),
-                      width: responsiveHeight(36),
-                      label: 'CYCLE',
-                    ),
-                  ],
-                ),
-              ),
-              ExSizedBox(flex: 4),
-              TitleText(
-                title: 'Learn More',
-                responsiveWidth: responsiveWidth,
-              ),
-              ExSizedBox(flex: 2),
-              Expanded(
-                flex: 12,
-                child: Container(
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      SmallerLocationCard(
-                        imageName: 'boatbeach',
-                        responsiveWidth: responsiveWidth,
-                        responsiveHeight: responsiveHeight,
-                      ),
-                      SizedBox(
-                        width: responsiveWidth(20),
-                      ),
-                      SmallerLocationCard(
-                        imageName: 'beach',
-                        responsiveWidth: responsiveWidth,
-                        responsiveHeight: responsiveHeight,
-                      ),
-                    ],
+                  ExSizedBox(
+                    flex: 3,
                   ),
-                ),
-              ),
-              Expanded(
-                flex: 6,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: responsiveHeight(10),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(responsiveHeight(30)),
-                      topRight: Radius.circular(responsiveHeight(30)),
+                  Expanded(
+                    flex: 6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'uil_kayak',
+                          height: responsiveHeight(36),
+                          width: responsiveHeight(36),
+                          label: 'KAYAK',
+                        ),
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'fa-solid_mountain',
+                          height: responsiveHeight(36),
+                          width: responsiveWidth(28.8),
+                          label: 'HIKE',
+                        ),
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'mdi_ski-water',
+                          height: responsiveHeight(36),
+                          width: responsiveHeight(36),
+                          label: 'WATER SKI',
+                        ),
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'fa-solid_spa',
+                          height: responsiveHeight(36),
+                          width: responsiveWidth(36),
+                          label: 'SPA',
+                        ),
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'ic_baseline-sports-tennis',
+                          height: responsiveHeight(36),
+                          width: responsiveHeight(36),
+                          label: 'TENNIS',
+                        ),
+                        ActivityItems(
+                          responsiveWidth: responsiveWidth,
+                          imageName: 'bi_bicycle',
+                          height: responsiveHeight(36),
+                          width: responsiveHeight(36),
+                          label: 'CYCLE',
+                        ),
+                      ],
                     ),
-                    color: Colors.white,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        width: responsiveHeight(32),
-                        height: responsiveHeight(32),
-                        child: ImagePicker(imageName: 'home'),
-                      ),
-                      Container(
-                        width: responsiveHeight(32),
-                        height: responsiveHeight(32),
-                        child: ImagePicker(imageName: 'heart'),
-                      ),
-                      Container(
-                        width: responsiveHeight(32),
-                        height: responsiveHeight(32),
-                        child: ImagePicker(imageName: 'account'),
-                      ),
-                    ],
+                  ExSizedBox(flex: 4),
+                  Expanded(
+                    flex: 4,
+                    child: TitleText(
+                      title: 'Learn More',
+                      responsiveWidth: responsiveWidth,
+                    ),
                   ),
-                ),
+                  ExSizedBox(flex: 2),
+                  Expanded(
+                    flex: 21,
+                    child: Container(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          SmallerLocationCard(
+                            imageName: 'boatbeach',
+                            responsiveWidth: responsiveWidth,
+                            responsiveHeight: responsiveHeight,
+                          ),
+                          SizedBox(
+                            width: responsiveWidth(20),
+                          ),
+                          SmallerLocationCard(
+                            imageName: 'beach',
+                            responsiveWidth: responsiveWidth,
+                            responsiveHeight: responsiveHeight,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // Expanded(
+                  //   flex: 6,
+                  //   child: Container(
+                  //     padding: EdgeInsets.symmetric(
+                  //       vertical: responsiveHeight(10),
+                  //     ),
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.only(
+                  //         topLeft: Radius.circular(responsiveHeight(30)),
+                  //         topRight: Radius.circular(responsiveHeight(30)),
+                  //       ),
+                  //       color: Colors.white,
+                  //     ),
+                  //     child: Row(
+                  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //       children: [
+                  //         Container(
+                  //           width: responsiveHeight(32),
+                  //           height: responsiveHeight(32),
+                  //           child: ImagePicker(imageName: 'home'),
+                  //         ),
+                  //         Container(
+                  //           width: responsiveHeight(32),
+                  //           height: responsiveHeight(32),
+                  //           child: ImagePicker(imageName: 'heart'),
+                  //         ),
+                  //         Container(
+                  //           width: responsiveHeight(32),
+                  //           height: responsiveHeight(32),
+                  //           child: ImagePicker(imageName: 'account'),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
