@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dimensions.dart';
+import '../dimensions.dart';
 
 void main() => runApp(
       HikingPage(),
