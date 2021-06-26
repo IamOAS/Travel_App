@@ -587,3 +587,18 @@ class ImagePicker extends StatelessWidget {
     return Image.asset(selectImage(imageName), fit: BoxFit.fill, color: colour);
   }
 }
+
+/* SingleChildScrollView(
+    child: ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+                Expanded(
+                    child: Text('Hello World!'),
+                ),
+            ],
+        ),
+    )
+)*/
